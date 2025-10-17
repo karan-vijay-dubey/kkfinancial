@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan EMI Calculator - KK Financial 2016 | Calculate Your Monthly Payments</title>
+    <meta name="description" content="Free loan EMI calculator by KK Financial 2016. Calculate monthly payments for housing, personal, vehicle, and other loans with competitive interest rates.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <div class="logo-k">K</div>
+                    <span class="logo-text">kkfinancial2016</span>
+                </div>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="calculator.html" class="nav-link active">Calculator</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button class="feedback-btn" onclick="openFeedbackModal()">
+                    <i class="fas fa-comment-dots"></i> Feedback
+                </button>
+                <a href="tel:+919372267693" class="nav-cta">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calculator Hero -->
+    <section class="calculator-hero">
+        <div class="container">
+            <div class="calculator-hero-content">
+                <h1>Loan EMI <span class="highlight">Calculator</span></h1>
+                <p class="hero-subtitle">Plan your finances with accurate EMI calculations</p>
+                <p class="hero-description">Use our advanced loan calculator to estimate your monthly payments and plan your budget effectively. Get instant results for all loan types.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-content">
+                <div class="calculator-panel">
+                    <div class="calculator-header">
+                        <h2>EMI Calculator</h2>
+                        <div class="loan-type-selector">
+                            <select id="loanTypeSelector">
+                                <option value="home">Home Loan</option>
+                                <option value="personal">Personal Loan</option>
+                                <option value="car">Car Loan</option>
+                                <option value="education">Education Loan</option>
+                                <option value="business">Business Loan</option>
+                                <option value="lap">Loan Against Property</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="loanAmount">Loan Amount</label>
+                            <div class="input-container">
+                                <span class="currency">₹</span>
+                                <input type="number" id="loanAmount" value="2500000" min="50000" max="50000000">
+                                <div class="range-container">
+                                    <input type="range" id="loanAmountRange" min="50000" max="50000000" value="2500000" step="50000">
+                                    <div class="range-labels">
+                                        <span>₹50K</span>
+                                        <span>₹5Cr</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="interestRate">Interest Rate (per annum)</label>
+                            <div class="input-container">
+                                <input type="number" id="interestRate" value="8.5" min="6" max="25" step="0.1">
+                                <span class="percentage">%</span>
+                                <div class="range-container">
+                                    <input type="range" id="interestRateRange" min="6" max="25" value="8.5" step="0.1">
+                                    <div class="range-labels">
+                                        <span>6%</span>
+                                        <span>25%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="loanTenure">Loan Tenure</label>
+                            <div class="input-container">
+                                <input type="number" id="loanTenure" value="20" min="1" max="30">
+                                <div class="tenure-toggle">
+                                    <button type="button" class="tenure-btn active" data-type="years">Years</button>
+                                    <button type="button" class="tenure-btn" data-type="months">Months</button>
+                                </div>
+                                <div class="range-container">
+                                    <input type="range" id="loanTenureRange" min="1" max="30" value="20">
+                                    <div class="range-labels">
+                                        <span>1 Yr</span>
+                                        <span>30 Yrs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculation-summary">
+                        <h3>Calculation Summary</h3>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <span class="label">Monthly EMI</span>
+                                <span class="value emi-amount" id="monthlyEMI">₹21,444</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Total Interest</span>
+                                <span class="value" id="totalInterest">₹26,46,560</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Total Amount</span>
+                                <span class="value" id="totalAmount">₹51,46,560</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-panel">
+                    <div class="chart-container">
+                        <h3>Payment Breakdown</h3>
+                        <div class="pie-chart" id="pieChart">
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color principal"></div>
+                                    <span>Principal Amount</span>
+                                    <span class="legend-value" id="principalPercent">48.5%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color interest"></div>
+                                    <span>Interest Amount</span>
+                                    <span class="legend-value" id="interestPercent">51.5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="additional-info">
+                        <div class="info-section">
+                            <h4>Key Benefits</h4>
+                            <div class="benefits-list">
+                                <div class="benefit-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Accurate EMI calculations</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Plan your budget effectively</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Compare different loan scenarios</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cta-section">
+                            <h4>Ready to Apply?</h4>
+                            <p>Get pre-approved with competitive rates</p>
+                            <a href="contact.html" class="btn-primary">Apply for Loan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Loan <span class="highlight">Comparison</span></h2>
+                <p>Compare different loan scenarios side by side</p>
+            </div>
+            <div class="comparison-container">
+                <div class="comparison-table">
+                    <table id="comparisonTable">
+                        <thead>
+                            <tr>
+                                <th>Loan Type</th>
+                                <th>Interest Rate</th>
+                                <th>Tenure</th>
+                                <th>EMI Amount</th>
+                                <th>Total Interest</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic content will be added here -->
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn-secondary" id="addComparison">
+                    <i class="fas fa-plus"></i> Add Current Calculation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interest Rates Section -->
+    <section class="rates-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Current Interest <span class="highlight">Rates</span></h2>
+                <p>Latest loan rates from our partner banks</p>
+            </div>
+            <div class="rates-grid">
+                <div class="rate-card">
+                    <div class="rate-header">
+                        <i class="fas fa-home"></i>
+                        <h3>Home Loans</h3>
+                    </div>
+                    <div class="rate-details">
+                        <div class="rate-range">8.5% - 10.5%</div>
+                        <div class="rate-tenure">Up to 30 years</div>
+                        <div class="rate-amount">Up to ₹5 Crores</div>
+                    </div>
+                    <a href="services.html#housing" class="rate-link">View Details</a>
+                </div>
+                <div class="rate-card">
+                    <div class="rate-header">
+                        <i class="fas fa-user"></i>
+                        <h3>Personal Loans</h3>
+                    </div>
+                    <div class="rate-details">
+                        <div class="rate-range">10.99% - 24%</div>
+                        <div class="rate-tenure">Up to 7 years</div>
+                        <div class="rate-amount">Up to ₹40 Lakhs</div>
+                    </div>
+                    <a href="services.html#personal" class="rate-link">View Details</a>
+                </div>
+                <div class="rate-card">
+                    <div class="rate-header">
+                        <i class="fas fa-car"></i>
+                        <h3>Car Loans</h3>
+                    </div>
+                    <div class="rate-details">
+                        <div class="rate-range">8.75% - 12%</div>
+                        <div class="rate-tenure">Up to 7 years</div>
+                        <div class="rate-amount">Up to ₹2 Crores</div>
+                    </div>
+                    <a href="services.html#vehicle" class="rate-link">View Details</a>
+                </div>
+                <div class="rate-card">
+                    <div class="rate-header">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Business Loans</h3>
+                    </div>
+                    <div class="rate-details">
+                        <div class="rate-range">11.5% - 18%</div>
+                        <div class="rate-tenure">Up to 10 years</div>
+                        <div class="rate-amount">Up to ₹15 Crores</div>
+                    </div>
+                    <a href="services.html#business" class="rate-link">View Details</a>
+                </div>
+                <div class="rate-card">
+                    <div class="rate-header">
+                        <i class="fas fa-building"></i>
+                        <h3>LAP</h3>
+                    </div>
+                    <div class="rate-details">
+                        <div class="rate-range">9.5% - 14%</div>
+                        <div class="rate-tenure">Up to 20 years</div>
+                        <div class="rate-amount">Up to ₹10 Crores</div>
+                    </div>
+                    <a href="services.html#lap" class="rate-link">View Details</a>
+                </div>
+                <div class="rate-card">
+                    <div class="rate-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Education Loans</h3>
+                    </div>
+                    <div class="rate-details">
+                        <div class="rate-range">9.5% - 15%</div>
+                        <div class="rate-tenure">Up to 15 years</div>
+                        <div class="rate-amount">Up to ₹1.5 Crores</div>
+                    </div>
+                    <a href="services.html#education" class="rate-link">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>EMI <span class="highlight">Tips</span></h2>
+                <p>Expert advice to optimize your loan experience</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h4>Compare Interest Rates</h4>
+                    <p>Shop around and compare rates from multiple lenders. Even a 0.5% difference can save thousands over the loan tenure.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4>Choose Optimal Tenure</h4>
+                    <p>Shorter tenure means higher EMI but lower total interest. Find the right balance based on your income and financial goals.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h4>Make Prepayments</h4>
+                    <p>Use bonuses and windfalls to make prepayments. This significantly reduces your total interest burden.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Maintain Good CIBIL</h4>
+                    <p>A good credit score (750+) helps you negotiate better rates and terms with lenders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Found Your Ideal EMI?</h2>
+                <p>Let our experts help you get the best loan deal with competitive rates and flexible terms.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary">Apply for Loan</a>
+                    <a href="tel:+919372267693" class="btn-secondary">Call Expert</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-container">
+                            <div class="logo-k">K</div>
+                            <span class="logo-text">kkfinancial2016</span>
+                        </div>
+                        <p>Unlock Your Financial Future</p>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919372267693">+91 93722 67693</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:kkfinancial2016@yahoo.com">kkfinancial2016@yahoo.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Office No 27, Ground Floor, Dimple Arcade, Thakur Complex, Kandivali East, Mumbai 400101</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#housing">Housing Loans</a></li>
+                        <li><a href="services.html#lap">Loan Against Property</a></li>
+                        <li><a href="services.html#personal">Personal Loans</a></li>
+                        <li><a href="services.html#business">Business Loans</a></li>
+                        <li><a href="services.html#vehicle">Vehicle Loans</a></li>
+                        <li><a href="services.html#education">Education Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="calculator.html">Loan Calculator</a></li>
+                        <li><button class="footer-feedback-btn" onclick="openFeedbackModal()">
+                            <i class="fas fa-comment-dots"></i> Share Feedback
+                        </button></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/61551222521657/videos/1448952432809584/?mibextid=rS40aB7S9Ucbxw6v" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/kkfinancial2016?utm_source=qr&igsh=MXNjZ3pvcjFncjR6ZQ==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KK Financial, established 2016. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Calculator specific JavaScript
+        let comparisonData = [];
+
+        // DOM elements
+        const loanAmountInput = document.getElementById('loanAmount');
+        const loanAmountRange = document.getElementById('loanAmountRange');
+        const interestRateInput = document.getElementById('interestRate');
+        const interestRateRange = document.getElementById('interestRateRange');
+        const loanTenureInput = document.getElementById('loanTenure');
+        const loanTenureRange = document.getElementById('loanTenureRange');
+        const loanTypeSelector = document.getElementById('loanTypeSelector');
+        const tenureButtons = document.querySelectorAll('.tenure-btn');
+        
+        let currentTenureType = 'years';
+
+        // Initialize calculator
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sync input fields with range sliders
+            syncInputs();
+            
+            // Add event listeners
+            loanAmountInput.addEventListener('input', function() {
+                loanAmountRange.value = this.value;
+                calculateEMI();
+            });
+            
+            loanAmountRange.addEventListener('input', function() {
+                loanAmountInput.value = this.value;
+                calculateEMI();
+            });
+            
+            interestRateInput.addEventListener('input', function() {
+                interestRateRange.value = this.value;
+                calculateEMI();
+            });
+            
+            interestRateRange.addEventListener('input', function() {
+                interestRateInput.value = this.value;
+                calculateEMI();
+            });
+            
+            loanTenureInput.addEventListener('input', function() {
+                loanTenureRange.value = this.value;
+                calculateEMI();
+            });
+            
+            loanTenureRange.addEventListener('input', function() {
+                loanTenureInput.value = this.value;
+                calculateEMI();
+            });
+            
+            loanTypeSelector.addEventListener('change', function() {
+                updateLoanTypeDefaults();
+                calculateEMI();
+            });
+            
+            // Tenure type toggle
+            tenureButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    tenureButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentTenureType = this.dataset.type;
+                    updateTenureRange();
+                    calculateEMI();
+                });
+            });
+            
+            // Add comparison button
+            document.getElementById('addComparison').addEventListener('click', addToComparison);
+            
+            // Initial calculation
+            calculateEMI();
+        });
+
+        function syncInputs() {
+            loanAmountRange.value = loanAmountInput.value;
+            interestRateRange.value = interestRateInput.value;
+            loanTenureRange.value = loanTenureInput.value;
+        }
+
+        function updateLoanTypeDefaults() {
+            const loanType = loanTypeSelector.value;
+            const defaults = {
+                'home': { rate: 8.5, maxTenure: 30 },
+                'personal': { rate: 10.99, maxTenure: 7 },
+                'car': { rate: 8.75, maxTenure: 7 },
+                'education': { rate: 9.5, maxTenure: 15 },
+                'business': { rate: 11.5, maxTenure: 10 },
+                'lap': { rate: 9.5, maxTenure: 20 }
+            };
+            
+            if (defaults[loanType]) {
+                interestRateInput.value = defaults[loanType].rate;
+                interestRateRange.value = defaults[loanType].rate;
+                
+                const maxTenure = defaults[loanType].maxTenure;
+                loanTenureRange.max = maxTenure;
+                if (parseInt(loanTenureInput.value) > maxTenure) {
+                    loanTenureInput.value = maxTenure;
+                    loanTenureRange.value = maxTenure;
+                }
+                
+                // Update range labels
+                const rangeLabels = loanTenureRange.parentElement.querySelector('.range-labels');
+                rangeLabels.children[1].textContent = `${maxTenure} ${currentTenureType === 'years' ? 'Yrs' : 'Mos'}`;
+            }
+        }
+
+        function updateTenureRange() {
+            if (currentTenureType === 'months') {
+                const yearsValue = parseInt(loanTenureInput.value);
+                const monthsValue = yearsValue * 12;
+                loanTenureInput.value = monthsValue;
+                loanTenureRange.value = monthsValue;
+                loanTenureRange.max = parseInt(loanTenureRange.max) * 12;
+                
+                // Update labels
+                const rangeLabels = loanTenureRange.parentElement.querySelector('.range-labels');
+                rangeLabels.children[0].textContent = '1 Mo';
+                rangeLabels.children[1].textContent = `${loanTenureRange.max} Mos`;
+            } else {
+                const monthsValue = parseInt(loanTenureInput.value);
+                const yearsValue = Math.round(monthsValue / 12);
+                loanTenureInput.value = yearsValue;
+                loanTenureRange.value = yearsValue;
+                loanTenureRange.max = Math.round(parseInt(loanTenureRange.max) / 12);
+                
+                // Update labels
+                const rangeLabels = loanTenureRange.parentElement.querySelector('.range-labels');
+                rangeLabels.children[0].textContent = '1 Yr';
+                rangeLabels.children[1].textContent = `${loanTenureRange.max} Yrs`;
+            }
+        }
+
+        function calculateEMI() {
+            const principal = parseFloat(loanAmountInput.value) || 0;
+            const annualRate = parseFloat(interestRateInput.value) || 0;
+            let tenure = parseInt(loanTenureInput.value) || 0;
+            
+            // Convert tenure to months if needed
+            const tenureInMonths = currentTenureType === 'years' ? tenure * 12 : tenure;
+            const monthlyRate = annualRate / (12 * 100);
+            
+            if (principal > 0 && annualRate > 0 && tenureInMonths > 0) {
+                // EMI calculation formula
+                const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, tenureInMonths)) / 
+                           (Math.pow(1 + monthlyRate, tenureInMonths) - 1);
+                
+                const totalAmount = emi * tenureInMonths;
+                const totalInterest = totalAmount - principal;
+                
+                // Update display
+                document.getElementById('monthlyEMI').textContent = `₹${formatNumber(Math.round(emi))}`;
+                document.getElementById('totalInterest').textContent = `₹${formatNumber(Math.round(totalInterest))}`;
+                document.getElementById('totalAmount').textContent = `₹${formatNumber(Math.round(totalAmount))}`;
+                
+                // Update percentages
+                const principalPercent = ((principal / totalAmount) * 100).toFixed(1);
+                const interestPercent = ((totalInterest / totalAmount) * 100).toFixed(1);
+                
+                document.getElementById('principalPercent').textContent = `${principalPercent}%`;
+                document.getElementById('interestPercent').textContent = `${interestPercent}%`;
+                
+                // Update pie chart
+                updatePieChart(principalPercent, interestPercent);
+            }
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString('en-IN');
+        }
+
+        function updatePieChart(principalPercent, interestPercent) {
+            // This is a simplified pie chart representation
+            // In a real application, you might want to use a charting library like Chart.js
+            const chart = document.getElementById('pieChart');
+            const principalDegrees = (principalPercent / 100) * 360;
+            
+            // Update CSS custom properties for the pie chart
+            document.documentElement.style.setProperty('--principal-degrees', `${principalDegrees}deg`);
+        }
+
+        function addToComparison() {
+            const principal = parseFloat(loanAmountInput.value) || 0;
+            const rate = parseFloat(interestRateInput.value) || 0;
+            let tenure = parseInt(loanTenureInput.value) || 0;
+            const loanType = loanTypeSelector.options[loanTypeSelector.selectedIndex].text;
+            
+            const tenureInMonths = currentTenureType === 'years' ? tenure * 12 : tenure;
+            const monthlyRate = rate / (12 * 100);
+            
+            if (principal > 0 && rate > 0 && tenureInMonths > 0) {
+                const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, tenureInMonths)) / 
+                           (Math.pow(1 + monthlyRate, tenureInMonths) - 1);
+                const totalInterest = (emi * tenureInMonths) - principal;
+                
+                const comparison = {
+                    loanType,
+                    rate: rate + '%',
+                    tenure: currentTenureType === 'years' ? `${tenure} years` : `${tenure} months`,
+                    emi: `₹${formatNumber(Math.round(emi))}`,
+                    totalInterest: `₹${formatNumber(Math.round(totalInterest))}`
+                };
+                
+                comparisonData.push(comparison);
+                updateComparisonTable();
+            }
+        }
+
+        function updateComparisonTable() {
+            const tbody = document.querySelector('#comparisonTable tbody');
+            tbody.innerHTML = '';
+            
+            comparisonData.forEach((data, index) => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${data.loanType}</td>
+                    <td>${data.rate}</td>
+                    <td>${data.tenure}</td>
+                    <td><strong>${data.emi}</strong></td>
+                    <td>${data.totalInterest}</td>
+                    <td>
+                        <button class="btn-remove" onclick="removeComparison(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+            });
+        }
+
+        function removeComparison(index) {
+            comparisonData.splice(index, 1);
+            updateComparisonTable();
+        }
+    </script>
+
+    <style>
+        /* Calculator page specific styles */
+        .calculator-hero {
+            padding: 120px 0 60px;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+        }
+
+        .calculator-hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .calculator-hero .highlight {
+            color: var(--accent-color);
+        }
+
+        .calculator-section {
+            padding: 80px 0;
+            background: var(--background-light);
+        }
+
+        .calculator-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+        }
+
+        .calculator-panel {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .calculator-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .calculator-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .loan-type-selector select {
+            padding: 10px 15px;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            background: white;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .calculator-inputs {
+            margin-bottom: 40px;
+        }
+
+        .input-group {
+            margin-bottom: 35px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .input-container input[type="number"] {
+            width: 100%;
+            padding: 15px 50px 15px 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .input-container input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .currency, .percentage {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .percentage {
+            left: auto;
+            right: 15px;
+        }
+
+        .range-container {
+            margin-top: 15px;
+        }
+
+        .range-container input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #e0e0e0;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .range-container input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .range-container input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+            border: none;
+        }
+
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .tenure-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            background: var(--background-light);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .tenure-btn {
+            padding: 8px 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tenure-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .calculation-summary {
+            border-top: 2px solid var(--background-light);
+            padding-top: 30px;
+        }
+
+        .calculation-summary h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .summary-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--background-light);
+            border-radius: 15px;
+        }
+
+        .summary-item .label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .summary-item .value {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .summary-item .emi-amount {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+        }
+
+        .results-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .chart-container h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .pie-chart {
+            text-align: center;
+        }
+
+        .chart-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+
+        .legend-color.principal {
+            background: var(--primary-color);
+        }
+
+        .legend-color.interest {
+            background: var(--accent-color);
+        }
+
+        .legend-value {
+            margin-left: auto;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .additional-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .info-section h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .benefits-list .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefits-list .benefit-item i {
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+
+        .benefits-list .benefit-item span {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .cta-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .cta-section .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .comparison-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            margin-bottom: 30px;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px 15px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 20px 15px;
+            border-bottom: 1px solid var(--background-light);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--background-light);
+        }
+
+        .btn-remove {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-remove:hover {
+            opacity: 0.8;
+        }
+
+        .rates-section {
+            padding: 80px 0;
+            background: var(--background-light);
+        }
+
+        .rates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .rate-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .rate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .rate-header {
+            margin-bottom: 20px;
+        }
+
+        .rate-header i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .rate-header h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .rate-details {
+            margin-bottom: 25px;
+        }
+
+        .rate-range {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .rate-tenure, .rate-amount {
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .rate-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .rate-link:hover {
+            color: var(--accent-color);
+        }
+
+        .tips-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .tip-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .tip-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .tip-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .tip-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .calculator-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .calculator-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .calculator-panel {
+                padding: 30px 20px;
+            }
+
+            .calculator-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rates-grid, .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+
+            .comparison-table table {
+                min-width: 600px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .input-container input[type="number"] {
+                padding: 12px 40px;
+                font-size: 1rem;
+            }
+
+            .currency, .percentage {
+                font-size: 1rem;
+            }
+
+            .rate-card, .tip-card {
+                padding: 25px 15px;
+            }
+        }
+    </style>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="feedback-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-comment-dots"></i> Share Your Feedback</h3>
+                <button class="modal-close" onclick="closeFeedbackModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-group">
+                        <label for="customerName">Name (Optional)</label>
+                        <input type="text" id="customerName" name="customerName" placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerEmail">Email (Optional)</label>
+                        <input type="email" id="customerEmail" name="customerEmail" placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceCategory">Service Category</label>
+                        <select id="serviceCategory" name="serviceCategory" required>
+                            <option value="">Select the service you're providing feedback about</option>
+                            <option value="housing">Housing Loan</option>
+                            <option value="lap">Loan Against Property</option>
+                            <option value="personal">Personal Loan</option>
+                            <option value="business">Business Loan</option>
+                            <option value="vehicle">Vehicle Loan</option>
+                            <option value="education">Education Loan</option>
+                            <option value="consultation">Consultation Service</option>
+                            <option value="customer-service">Customer Service</option>
+                            <option value="website">Website Experience</option>
+                            <option value="general">General Feedback</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rate Your Experience</label>
+                        <div class="rating-container">
+                            <div class="star-rating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <span class="rating-text">Click to rate</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackMessage">Your Feedback *</label>
+                        <textarea id="feedbackMessage" name="feedbackMessage" rows="4" placeholder="Please share your experience, suggestions, or any feedback you have about our services..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="feedbackConsent" name="feedbackConsent" required>
+                            <span class="checkmark"></span>
+                            I agree to share this feedback and allow KK Financial to use it for service improvement
+                        </label>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondary" onclick="closeFeedbackModal()">Cancel</button>
+                        <button type="submit" class="btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Feedback
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact KK Financial 2016 - Get Free Loan Consultation</title>
+    <meta name="description" content="Contact KK Financial 2016 for expert loan consultation. Call +91 93722 67693 or email us for personalized financial solutions in Mumbai.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <div class="logo-k">K</div>
+                    <span class="logo-text">kkfinancial2016</span>
+                </div>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="calculator.html" class="nav-link">Calculator</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <button class="feedback-btn" onclick="openFeedbackModal()">
+                    <i class="fas fa-comment-dots"></i> Feedback
+                </button>
+                <a href="tel:+919372267693" class="nav-cta">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1>Get in <span class="highlight">Touch</span></h1>
+                <p class="hero-subtitle">We're here to help you achieve your financial goals</p>
+                <p class="hero-description">Contact our expert team for personalized loan solutions and free financial consultation. We're committed to finding the best financial options for your unique needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Speak directly with our loan experts</p>
+                    <a href="tel:+919372267693" class="contact-link">+91 93722 67693</a>
+                    <span class="contact-hours">Mon - Sat: 9:00 AM - 7:00 PM</span>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>Send us your queries anytime</p>
+                    <a href="mailto:kkfinancial2016@yahoo.com" class="contact-link">kkfinancial2016@yahoo.com</a>
+                    <a href="mailto:kkfinancial2016@gmail.com" class="contact-link">kkfinancial2016@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Meet us for personalized consultation</p>
+                    <span class="contact-link">Office No 27, Ground Floor, Dimple Arcade, Thakur Complex, Kandivali East, Mumbai 400101</span>
+                    <span class="contact-hours">By appointment only</span>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Free Consultation</h3>
+                    <p>Get expert advice at no cost</p>
+                    <span class="contact-link">Available for all loan types</span>
+                    <span class="contact-hours">CIBIL consultation included</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Forms -->
+    <section class="contact-forms">
+        <div class="container">
+            <div class="forms-content">
+                <div class="form-section">
+                    <div class="form-header">
+                        <h2>Get Free <span class="highlight">Consultation</span></h2>
+                        <p>Fill out the form below and our experts will get back to you within 24 hours</p>
+                    </div>
+                    <form class="consultation-form" id="consultationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" value="Mumbai">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="loanType">Loan Type *</label>
+                            <select id="loanType" name="loanType" required>
+                                <option value="">Select loan type</option>
+                                <option value="housing">Housing Loan</option>
+                                <option value="lap">Loan Against Property</option>
+                                <option value="personal">Personal Loan</option>
+                                <option value="business">Business Loan</option>
+                                <option value="vehicle">Vehicle Loan</option>
+                                <option value="education">Education Loan</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="loanAmount">Required Loan Amount</label>
+                                <input type="text" id="loanAmount" name="loanAmount" placeholder="₹">
+                            </div>
+                            <div class="form-group">
+                                <label for="income">Monthly Income</label>
+                                <input type="text" id="income" name="income" placeholder="₹">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / Requirements</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your specific requirements..."></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <span class="checkmark"></span>
+                                I agree to receive consultation calls and updates about loan offers
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-primary submit-btn">
+                            <i class="fas fa-envelope"></i>
+                            Send Consultation Request
+                        </button>
+                        <p class="form-note">
+                            <i class="fas fa-info-circle"></i>
+                            This will open your email client with your request pre-filled. Simply click send to submit.
+                        </p>
+                    </form>
+                </div>
+                <div class="benefits-section">
+                    <div class="benefits-card">
+                        <h3>Why Choose Our Consultation?</h3>
+                        <div class="benefit-list">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>100% Free Service</h4>
+                                    <p>No charges for consultation and guidance</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Expert Advice</h4>
+                                    <p>Get guidance from experienced loan consultants</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Best Rates</h4>
+                                    <p>Compare and get the most competitive rates</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Quick Response</h4>
+                                    <p>Get callback within 24 hours</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>CIBIL Guidance</h4>
+                                    <p>Free credit score consultation included</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-contact">
+                        <h4>Need Immediate Help?</h4>
+                        <p>Call us directly for instant assistance</p>
+                        <a href="tel:+919372267693" class="quick-call-btn">
+                            <i class="fas fa-phone"></i>
+                            Call +91 93722 67693
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+                <p>Quick answers to common questions about our services</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How long does the loan approval process take?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The approval time varies by loan type and bank. Personal loans can be approved within 24-48 hours, while housing loans typically take 7-15 days. We ensure the fastest possible processing through our direct bank relationships.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What documents are required for loan application?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Basic documents include identity proof, address proof, income documents, and bank statements. Specific requirements vary by loan type. We provide a detailed checklist during consultation and help with document preparation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you charge any fees for consultation?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, our consultation services are completely free. We don't charge any upfront fees. Our revenue comes from the banks after successful loan disbursement, so our success is tied to yours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can you help improve my CIBIL score?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide free CIBIL consultation and guidance on improving your credit score. We analyze your credit report and suggest actionable steps to enhance your creditworthiness for better loan terms.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Which banks do you work with?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have direct partnerships with over 15 leading banks and NBFCs including SBI, HDFC, ICICI, Axis Bank, Kotak Mahindra, and many more. This allows us to offer you the best rates and terms available in the market.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I apply for loans even with low CIBIL score?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we work with multiple lenders who offer loans to applicants with low CIBIL scores. We help identify the right lender based on your profile and work on strategies to improve your eligibility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-content">
+                <div class="map-info">
+                    <h3>Visit Our Mumbai Office</h3>
+                    <p>Schedule an appointment for personalized consultation</p>
+                    <div class="office-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Office No 27, Ground Floor, Dimple Arcade, Thakur Complex, Kandivali East, Mumbai 400101</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919372267693">+91 93722 67693</a>
+                        </div>
+                    </div>
+                    <a href="tel:+919372267693" class="btn-primary">Schedule Appointment</a>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.9088!2d72.8744!3d19.2056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0e57647491f%3A0x11fd1c5b1f69b6e8!2sThakur%20Complex%2C%20Kandivali%20East%2C%20Mumbai%2C%20Maharashtra%20400101!5e0!3m2!1sen!2sin!4v1642582847462!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 12px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="KK Financial Office Location">
+                    </iframe>
+                    <div class="map-overlay">
+                        <div class="map-marker">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="marker-info">
+                                <strong>KK Financial 2016</strong>
+                                <p>Office No 27, Dimple Arcade, Kandivali East</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-container">
+                            <div class="logo-k">K</div>
+                            <span class="logo-text">kkfinancial2016</span>
+                        </div>
+                        <p>Unlock Your Financial Future</p>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919372267693">+91 93722 67693</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:kkfinancial2016@yahoo.com">kkfinancial2016@yahoo.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Office No 27, Ground Floor, Dimple Arcade, Thakur Complex, Kandivali East, Mumbai 400101</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#housing">Housing Loans</a></li>
+                        <li><a href="services.html#lap">Loan Against Property</a></li>
+                        <li><a href="services.html#personal">Personal Loans</a></li>
+                        <li><a href="services.html#business">Business Loans</a></li>
+                        <li><a href="services.html#vehicle">Vehicle Loans</a></li>
+                        <li><a href="services.html#education">Education Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="calculator.html">Loan Calculator</a></li>
+                        <li><button class="footer-feedback-btn" onclick="openFeedbackModal()">
+                            <i class="fas fa-comment-dots"></i> Share Feedback
+                        </button></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/61551222521657/videos/1448952432809584/?mibextid=rS40aB7S9Ucbxw6v" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/kkfinancial2016?utm_source=qr&igsh=MXNjZ3pvcjFncjR6ZQ==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KK Financial 2016.copy; 2025 KK Financial, established 2016. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <style>
+        /* Contact page specific styles */
+        .contact-hero {
+            padding: 120px 0 60px;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .contact-hero .highlight {
+            color: var(--accent-color);
+        }
+
+        .contact-methods {
+            padding: 80px 0;
+            background: var(--background-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transition: var(--transition);
+        }
+
+        .contact-card:hover::before {
+            left: 0;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .contact-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .contact-link {
+            display: block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-hours {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .contact-forms {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .forms-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .form-header {
+            margin-bottom: 40px;
+        }
+
+        .form-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .form-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .consultation-form {
+            background: var(--background-light);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            padding: 18px;
+        }
+
+        .benefits-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 30px;
+        }
+
+        .benefits-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .benefit-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .benefit-list .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .benefit-list .benefit-item i {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+
+        .benefit-list .benefit-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .benefit-list .benefit-item p {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .quick-contact {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .quick-contact h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .quick-contact p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .quick-call-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .quick-call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .faq-section {
+            padding: 100px 0;
+            background: var(--background-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--background-light);
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .faq-question i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 25px;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .map-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .map-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .map-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .map-info p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .office-details {
+            margin-bottom: 30px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .detail-item i {
+            color: var(--primary-color);
+            width: 20px;
+        }
+
+        .detail-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .map-placeholder {
+            height: 300px;
+            background: var(--background-light);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 2px dashed var(--primary-color);
+        }
+
+        .map-icon {
+            color: var(--primary-color);
+        }
+
+        .map-icon i {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .map-icon p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .map-icon span {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .forms-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .consultation-form {
+                padding: 30px 20px;
+            }
+
+            .map-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .faq-question {
+                padding: 20px;
+            }
+
+            .faq-answer {
+                padding: 0 20px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-card {
+                padding: 30px 20px;
+            }
+
+            .benefits-card {
+                padding: 30px 20px;
+            }
+
+            .quick-contact {
+                padding: 25px 20px;
+            }
+
+            .form-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="feedback-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-comment-dots"></i> Share Your Feedback</h3>
+                <button class="modal-close" onclick="closeFeedbackModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-group">
+                        <label for="customerName">Name (Optional)</label>
+                        <input type="text" id="customerName" name="customerName" placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerEmail">Email (Optional)</label>
+                        <input type="email" id="customerEmail" name="customerEmail" placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceCategory">Service Category</label>
+                        <select id="serviceCategory" name="serviceCategory" required>
+                            <option value="">Select the service you're providing feedback about</option>
+                            <option value="housing">Housing Loan</option>
+                            <option value="lap">Loan Against Property</option>
+                            <option value="personal">Personal Loan</option>
+                            <option value="business">Business Loan</option>
+                            <option value="vehicle">Vehicle Loan</option>
+                            <option value="education">Education Loan</option>
+                            <option value="consultation">Consultation Service</option>
+                            <option value="customer-service">Customer Service</option>
+                            <option value="website">Website Experience</option>
+                            <option value="general">General Feedback</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rate Your Experience</label>
+                        <div class="rating-container">
+                            <div class="star-rating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <span class="rating-text">Click to rate</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackMessage">Your Feedback *</label>
+                        <textarea id="feedbackMessage" name="feedbackMessage" rows="4" placeholder="Please share your experience, suggestions, or any feedback you have about our services..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="feedbackConsent" name="feedbackConsent" required>
+                            <span class="checkmark"></span>
+                            I agree to share this feedback and allow KK Financial to use it for service improvement
+                        </label>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondary" onclick="closeFeedbackModal()">Cancel</button>
+                        <button type="submit" class="btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Feedback
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

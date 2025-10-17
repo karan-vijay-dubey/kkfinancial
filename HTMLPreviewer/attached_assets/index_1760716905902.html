@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK Financial 2016 - Professional Loan Consulting Services in Mumbai</title>
+    <meta name="description" content="KK Financial 2016 offers comprehensive loan solutions including housing loans, LAP, personal loans, business loans, and more. Expert financial consulting in Mumbai.">
+    <meta name="keywords" content="housing loans Mumbai, personal loans, business loans, loan against property, financial consultant Mumbai, loan advisor, EMI calculator">
+    <meta name="author" content="KK Financial 2016">
+    <meta property="og:title" content="KK Financial 2016 - Professional Loan Consulting Services">
+    <meta property="og:description" content="Expert loan consulting services in Mumbai. Get the best rates on housing, personal, and business loans.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <div class="logo-k">K</div>
+                    <span class="logo-text">kkfinancial2016</span>
+                </div>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="calculator.html" class="nav-link">Calculator</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button class="feedback-btn" onclick="openFeedbackModal()">
+                    <i class="fas fa-comment-dots"></i> Feedback
+                </button>
+                <a href="tel:+919372267693" class="nav-cta">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Secure Your Financial Future</h1>
+                <p class="hero-subtitle">with our range of <strong>Financial Solutions</strong></p>
+                <p class="hero-description">Professional loan consulting services in Mumbai. We provide personalized financial solutions with direct bank relationships and expert guidance.</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="btn-primary">Get Free Consultation</a>
+                    <a href="tel:+919372267693" class="btn-secondary">
+                        <i class="fas fa-phone"></i> +91 93722 67693
+                    </a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure & Trusted</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Direct Bank Tie-ups</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Free Financial Counseling</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <div class="financial-graphic">
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Bank Partners</span>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Discover the Art of <span class="highlight">Financial Success</span></h2>
+                <p>with our personalized consultations</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Housing Loans</h3>
+                    <p>Make your dream home a reality with our competitive housing loan options and expert guidance.</p>
+                    <a href="services.html#housing" class="service-link">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Loan Against Property</h3>
+                    <p>Unlock the value of your property with our flexible LAP solutions for all your financial needs.</p>
+                    <a href="services.html#lap" class="service-link">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Personal Loans</h3>
+                    <p>Quick and hassle-free personal loans for all your immediate financial requirements.</p>
+                    <a href="services.html#personal" class="service-link">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business Loans</h3>
+                    <p>Fuel your business growth with our tailored business loan solutions and expert support.</p>
+                    <a href="services.html#business" class="service-link">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Vehicle Loans</h3>
+                    <p>Drive your dream vehicle today with our competitive auto loan rates and quick approval.</p>
+                    <a href="services.html#vehicle" class="service-link">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education Loans</h3>
+                    <p>Invest in your future with our comprehensive education loan solutions for all courses.</p>
+                    <a href="services.html#education" class="service-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-content">
+                <div class="content-text">
+                    <h2>Turn Financial <span class="highlight">Challenges into Opportunities</span></h2>
+                    <p class="section-subtitle">with our innovative solutions</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Direct Bank Relationships</h4>
+                                <p>We work directly with leading banks to ensure you get the best rates and fastest approvals.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Free Financial Counseling</h4>
+                                <p>Expert guidance at no cost to help you make informed financial decisions.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Quick Processing</h4>
+                                <p>Streamlined processes to ensure quick loan approvals and disbursements.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Personalized Solutions</h4>
+                                <p>Customized financial solutions tailored to your specific needs and circumstances.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-visual">
+                    <div class="opportunity-graphic">
+                        <div class="success-stats">
+                            <div class="success-item">
+                                <div class="success-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4>98% Success Rate</h4>
+                                <p>Loan Approvals</p>
+                            </div>
+                            <div class="success-item">
+                                <div class="success-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h4>Expert Guidance</h4>
+                                <p>Personalized Consulting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Secure Your Financial Future?</h2>
+                <p>Contact us today for a free consultation and discover the best loan solutions for your needs.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary">Get Free Consultation</a>
+                    <a href="calculator.html" class="btn-secondary">Try Loan Calculator</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-container">
+                            <div class="logo-k">K</div>
+                            <span class="logo-text">kkfinancial2016</span>
+                        </div>
+                        <p>Unlock Your Financial Future</p>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919372267693">+91 93722 67693</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:kkfinancial2016@yahoo.com">kkfinancial2016@yahoo.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Office No 27, Ground Floor, Dimple Arcade, Thakur Complex, Kandivali East, Mumbai 400101</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#housing">Housing Loans</a></li>
+                        <li><a href="services.html#lap">Loan Against Property</a></li>
+                        <li><a href="services.html#personal">Personal Loans</a></li>
+                        <li><a href="services.html#business">Business Loans</a></li>
+                        <li><a href="services.html#vehicle">Vehicle Loans</a></li>
+                        <li><a href="services.html#education">Education Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="calculator.html">Loan Calculator</a></li>
+                        <li><button class="footer-feedback-btn" onclick="openFeedbackModal()">
+                            <i class="fas fa-comment-dots"></i> Share Feedback
+                        </button></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/61551222521657/videos/1448952432809584/?mibextid=rS40aB7S9Ucbxw6v" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/kkfinancial2016?utm_source=qr&igsh=MXNjZ3pvcjFncjR6ZQ==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KK Financial, established 2016. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="feedback-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-comment-dots"></i> Share Your Feedback</h3>
+                <button class="modal-close" onclick="closeFeedbackModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-group">
+                        <label for="customerName">Name (Optional)</label>
+                        <input type="text" id="customerName" name="customerName" placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerEmail">Email (Optional)</label>
+                        <input type="email" id="customerEmail" name="customerEmail" placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceCategory">Service Category</label>
+                        <select id="serviceCategory" name="serviceCategory" required>
+                            <option value="">Select the service you're providing feedback about</option>
+                            <option value="housing">Housing Loan</option>
+                            <option value="lap">Loan Against Property</option>
+                            <option value="personal">Personal Loan</option>
+                            <option value="business">Business Loan</option>
+                            <option value="vehicle">Vehicle Loan</option>
+                            <option value="education">Education Loan</option>
+                            <option value="consultation">Consultation Service</option>
+                            <option value="customer-service">Customer Service</option>
+                            <option value="website">Website Experience</option>
+                            <option value="general">General Feedback</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <fieldset class="rating-container" id="rating-group">
+                            <legend id="rating-legend" class="rating-legend">Rate Your Experience</legend>
+                            <div class="rating-group" role="radiogroup" aria-labelledby="rating-legend">
+                            <div class="star-rating" id="starRating">
+                                <button type="button" class="star-btn" data-rating="1" role="radio" aria-checked="false" aria-label="1 star - Poor" tabindex="-1">
+                                    <i class="star-icon far fa-star" aria-hidden="true"></i>
+                                    <i class="star-icon-filled fas fa-star" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="star-btn" data-rating="2" role="radio" aria-checked="false" aria-label="2 stars - Fair" tabindex="-1">
+                                    <i class="star-icon far fa-star" aria-hidden="true"></i>
+                                    <i class="star-icon-filled fas fa-star" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="star-btn" data-rating="3" role="radio" aria-checked="false" aria-label="3 stars - Good" tabindex="0">
+                                    <i class="star-icon far fa-star" aria-hidden="true"></i>
+                                    <i class="star-icon-filled fas fa-star" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="star-btn" data-rating="4" role="radio" aria-checked="false" aria-label="4 stars - Very Good" tabindex="-1">
+                                    <i class="star-icon far fa-star" aria-hidden="true"></i>
+                                    <i class="star-icon-filled fas fa-star" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="star-btn" data-rating="5" role="radio" aria-checked="false" aria-label="5 stars - Excellent" tabindex="-1">
+                                    <i class="star-icon far fa-star" aria-hidden="true"></i>
+                                    <i class="star-icon-filled fas fa-star" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            </div>
+                            <div class="rating-feedback">
+                                <span class="rating-text" aria-live="polite">Click to rate</span>
+                                <div class="rating-labels">
+                                    <span class="rating-label" data-rating="1">Poor</span>
+                                    <span class="rating-label" data-rating="2">Fair</span>
+                                    <span class="rating-label" data-rating="3">Good</span>
+                                    <span class="rating-label" data-rating="4">Very Good</span>
+                                    <span class="rating-label" data-rating="5">Excellent</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <input type="hidden" id="rating" name="rating" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedbackMessage">Your Feedback *</label>
+                        <textarea id="feedbackMessage" name="feedbackMessage" rows="4" placeholder="Please share your experience, suggestions, or any feedback you have about our services..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="feedbackConsent" name="feedbackConsent" required>
+                            <span class="checkmark"></span>
+                            I agree to share this feedback and allow KK Financial to use it for service improvement
+                        </label>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondary" onclick="closeFeedbackModal()">Cancel</button>
+                        <button type="submit" class="btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Feedback
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
